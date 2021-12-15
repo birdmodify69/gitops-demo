@@ -1,7 +1,7 @@
 environment: dev
 
 eService:
-  name: eService
+  name: eservice
   replicaCount: 1
   port: 80
   image: birdmodify/birdtest-webapp:20211203-9
