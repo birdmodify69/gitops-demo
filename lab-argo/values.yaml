@@ -4,10 +4,11 @@ eService:
   name: eService
   replicaCount: 1
   port: 80
-  image: docker pull registry.hub.docker.com/birdmodify/birdtest-webapp:20211203-9
+  image: birdmodify/birdtest-webapp:20211203-9
   pullPolicy: IfNotPresent
   service:
     type: LoadBalancer
+    port: 80
   resources:
     limits:  
       cpu: 2000m
