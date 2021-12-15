@@ -1,0 +1,20 @@
+environment: dev
+
+eService:
+  name: eService
+  replicaCount: 1
+  port: 80
+  image: docker pull registry.hub.docker.com/birdmodify/birdtest-webapp:20211203-9
+  pullPolicy: IfNotPresent
+  service:
+    type: LoadBalancer
+  resources:
+    limits:  
+      cpu: 2000m
+      memory: 1024Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}

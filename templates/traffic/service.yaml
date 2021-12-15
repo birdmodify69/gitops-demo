@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ .Values.eService.name }}"
+  labels:
+    app: "{{ .Values.eService.name }}"
+    service: "{{ .Values.eService.name }}"
+    chart: {{ template "helm-sapgw.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.eService.service.type }}
+  ports:
+    - port: {{ .Values.eService.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: "{{ .Values.eService.name }}"
